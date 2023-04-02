@@ -5,6 +5,8 @@
  */
 package avaliacao;
 
+import java.util.Date;
+
 /**
  *
  * @author Aluno
@@ -12,11 +14,8 @@ package avaliacao;
 public class Advogado extends Funcionario {
     private String oab;
 
-    public Advogado() {
-    }
-
-    public Advogado(String oab, String cpf, String rg, String matricula, Setor setor, double salario) {
-        super(cpf, rg, matricula, setor, salario);
+    public Advogado(String oab, String cpf, String rg, String matricula, Setor setor, double salario, EstadoCivil estadoCivil, Genero genero, Date dataNascimento, int id, String nome, String telefone, String email, Endereco endereco) {
+        super(cpf, rg, matricula, setor, salario, estadoCivil, genero, dataNascimento, id, nome, telefone, email, endereco);
         this.oab = oab;
     }
 
@@ -28,11 +27,35 @@ public class Advogado extends Funcionario {
         this.oab = oab;
     }
 
+   
+   
+
+  
+
     @Override
     public String toString() {
-        return "Advogado:" + super.cpf + "\nRG: " + super.rg + "\nMatricula: " 
-                + super.matricula + "\nSetor: " + super.setor + "\nSalario: " +
-                super.salario + "\nOAB: " + this.oab + "\n..........................................";
+        return "Dados do Advogado(a):"  +
+                "\nCPF: " + super.cpf + 
+                "\nRG: " + super.rg + 
+                "\nMatricula: " + super.matricula +
+                "\nSetor: " + super.setor +
+                "\nSalario: " + super.salario + 
+                "\nGenêro: " + super.genero + 
+                "\nOAB: " + this.oab +
+                "\nID: " + super.id + 
+                "\nNome: " + super.nome +
+                "\nTelefone: " + super.telefone +
+                "\nEmail: " + super.email +
+                "\n---------------------------------------\nEndereço:\n" + super.endereco.logradouro +
+                "\nNumero: " + super.endereco.numero + 
+                "\nComplemento:" + super.endereco.complemento +
+                "\nCEP: " + super.endereco.cep +
+                "\nCidade:" + super.endereco.cidade +
+                "\nUF: " + super.endereco.uf +
+           
+               
+                
+                "\n..........................................";
     }
     
     

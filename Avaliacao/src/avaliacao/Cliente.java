@@ -5,6 +5,8 @@
  */
 package avaliacao;
 
+import java.util.Date;
+
 /**
  *
  * @author Aluno
@@ -12,11 +14,8 @@ package avaliacao;
 public class Cliente extends Fisica {
     private int protocoloAtendimento;
 
-    public Cliente() {
-    }
-
-    public Cliente(int protocoloAtendimento, int idade, Genero genero) {
-        super(idade, genero);
+    public Cliente(int protocoloAtendimento, EstadoCivil estadoCivil, Genero genero, Date dataNascimento, int id, String nome, String telefone, String email, Endereco endereco) {
+        super(estadoCivil, genero, dataNascimento, id, nome, telefone, email, endereco);
         this.protocoloAtendimento = protocoloAtendimento;
     }
 
@@ -29,11 +28,26 @@ public class Cliente extends Fisica {
     }
 
     
+   
+    
     
     
     @Override
     public String toString() {
-        return "Cliente: " + super.idade + "\nGênero: " + super.genero + 
+        return "Dados do Cliente: " +
+                
+                "\nGenêro: " + super.genero + 
+                 "\nID: " + super.id + 
+                "\nNome: " + super.nome +
+                "\nTelefone: " + super.telefone +
+                "\nEmail: " + super.email +
+                "\n---------------------------------------\nEndereço:\n" + super.endereco.logradouro +
+                "\nNumero: " + super.endereco.numero + 
+                "\nComplemento:" + super.endereco.complemento +
+                "\nCEP: " + super.endereco.cep +
+                "\nCidade:" + super.endereco.cidade +
+                "\nUF: " + super.endereco.uf +
+                
                 "\nProtocolo de Atendimento: " + this.protocoloAtendimento ;
                 }
     

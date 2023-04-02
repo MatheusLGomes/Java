@@ -5,28 +5,30 @@
  */
 package avaliacao;
 
+import java.util.Date;
+
 /**
  *
  * @author Aluno
  */
-public abstract class Fisica {
-    protected int idade;
+public abstract class Fisica extends Pessoa{
+    protected EstadoCivil estadoCivil;
     protected Genero genero;
+    protected Date dataNascimento;
 
-    public Fisica() {
-    }
-
-    public Fisica(int idade, Genero genero) {
-        this.idade = idade;
+    public Fisica(EstadoCivil estadoCivil, Genero genero, Date dataNascimento, int id, String nome, String telefone, String email, Endereco endereco) {
+        super(id, nome, telefone, email, endereco);
+        this.estadoCivil = estadoCivil;
         this.genero = genero;
+        this.dataNascimento = dataNascimento;
     }
 
-    public int getIdade() {
-        return idade;
+    public EstadoCivil getEstadoCivil() {
+        return estadoCivil;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setEstadoCivil(EstadoCivil estadoCivil) {
+        this.estadoCivil = estadoCivil;
     }
 
     public Genero getGenero() {
@@ -36,5 +38,14 @@ public abstract class Fisica {
     public void setGenero(Genero genero) {
         this.genero = genero;
     }
-    
+
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+   
+  
 }

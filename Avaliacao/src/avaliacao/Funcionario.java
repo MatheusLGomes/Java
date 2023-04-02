@@ -5,21 +5,21 @@
  */
 package avaliacao;
 
+import java.util.Date;
+
 /**
  *
  * @author Aluno
  */
-public abstract class Funcionario {
+ public abstract class Funcionario extends Fisica{
     protected String cpf;
     protected String rg;
     protected String matricula;
     protected Setor setor;
     protected double salario;
 
-    public Funcionario() {
-    }
-
-    public Funcionario(String cpf, String rg, String matricula, Setor setor, double salario) {
+    public Funcionario(String cpf, String rg, String matricula, Setor setor, double salario, EstadoCivil estadoCivil, Genero genero, Date dataNascimento, int id, String nome, String telefone, String email, Endereco endereco) {
+        super(estadoCivil, genero, dataNascimento, id, nome, telefone, email, endereco);
         this.cpf = cpf;
         this.rg = rg;
         this.matricula = matricula;
@@ -66,5 +66,9 @@ public abstract class Funcionario {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+ 
+ 
+    
     
 }
